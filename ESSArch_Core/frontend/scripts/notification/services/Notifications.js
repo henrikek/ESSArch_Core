@@ -1,4 +1,5 @@
-angular.module('myApp').factory('Notifications', function ($rootScope, $q, appConfig, $http, $window, $websocket) {
+/* @ngInject */
+function Notifications ($rootScope, $q, appConfig, $http, $window, $websocket) {
     // Keep all pending requests here until they get responses
     var callbacks = {};
     // Create a unique callback ID to map requests to responses
@@ -108,4 +109,6 @@ angular.module('myApp').factory('Notifications', function ($rootScope, $q, appCo
         }
     }
     return service;
-});
+};
+
+export default Notifications;

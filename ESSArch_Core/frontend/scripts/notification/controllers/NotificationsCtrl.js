@@ -1,4 +1,5 @@
-angular.module('myApp').controller('NotificationsCtrl', function(appConfig, Notifications, $timeout, $interval, $scope, $rootScope, $http, $window, Messenger, $state) {
+/* @ngInject */
+function notificationsCtrl(appConfig, Notifications, $timeout, $interval, $scope, $rootScope, $http, $window, Messenger, $state) {
     var vm = this;
     vm.visible = false;
     vm.alerts = [];
@@ -271,4 +272,6 @@ angular.module('myApp').controller('NotificationsCtrl', function(appConfig, Noti
     $scope.$on('get_notifications', function (event, data) {
         vm.getNotifications();
     });
-});
+};
+
+export default notificationsCtrl;

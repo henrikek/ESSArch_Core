@@ -1,4 +1,4 @@
-angular.module('myApp').directive('onScroll', function() {
+function infiniteScroll() {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
@@ -12,4 +12,6 @@ angular.module('myApp').directive('onScroll', function() {
             });
         }
     };
-});
+};
+
+export default infiniteScroll;

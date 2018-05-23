@@ -22,7 +22,10 @@
     Email - essarch@essolutions.se
 */
 
-angular.module('myApp').controller('LoginCtrl', function ($scope, $location, $window, myService, $state, $stateParams, $rootScope, djangoAuth, Validate, PermRoleStore, PermPermissionStore){
+var moment = require('moment')
+
+/* @ngInject */
+function loginCtrl($scope, $location, $window, myService, $state, $stateParams, $rootScope, djangoAuth, Validate, PermRoleStore, PermPermissionStore){
     $scope.redirectAdmin = function () {
         $window.location.href="/admin/";
     }
@@ -48,8 +51,11 @@ angular.module('myApp').controller('LoginCtrl', function ($scope, $location, $wi
                     }
                 }).catch(function(data){
                     // error case
+                    console.log(data);
                     $scope.error = data.data.non_field_errors[0];
                 });
         }
     }
-});
+};
+
+export default loginCtrl;
